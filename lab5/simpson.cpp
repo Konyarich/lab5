@@ -46,7 +46,7 @@ double simpson_wrapped(double a, double b, int m, double (*F)(double)){
     double simpson1 = simpson(a, b, base_m, F);
     double simpson2 = simpson(a, b, m_2, F);
 
-    while(!(std::abs(simpson1-simpson2) <= eps)){
+    while(!(std::abs(simpson1-simpson2) <= 15 * eps)){
         base_m = m_2;
         m_2 *= 2;
         simpson1 = simpson(a, b, base_m, F);
